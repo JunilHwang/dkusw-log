@@ -19,8 +19,13 @@
     "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
+    "@types/koa-morgan": "^1.0.4",
+    "debug": "^4.1.1",
+    "dotenv": "^7.0.0",
     "koa": "^2.7.0",
+    "koa-morgan": "^1.0.1",
     "koa-router": "^7.4.0",
+    "mysql2": "^1.6.5",
     "tslint": "^5.14.0"
   }
 }
