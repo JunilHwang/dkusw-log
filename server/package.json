@@ -1,0 +1,25 @@
+{
+  "name": "dkusw-log-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/koa": "^2.0.48",
+    "@types/koa-router": "^7.0.40",
+    "nodemon": "^1.18.10",
+    "source-map-support": "^0.5.11",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.4.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "scripts": {
+    "start": "nodemon --watch src --delay 1 --exec ts-node ./src/www.ts",
+    "build": "webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0"
+  }
+}
