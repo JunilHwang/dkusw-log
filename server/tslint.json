@@ -1,0 +1,23 @@
+{
+  "defaultSeverity": "warning",
+  "extends": [ "tslint:latset" ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**"
+    ]
+  },
+  "rules": {
+    "quotemark": [true, "single"],
+    "indent": [true, "spaces", 2],
+    "space-before-function-paren": [true, "always"],
+    "interface-name": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "no-consecutive-blank-lines": false,
+    "semicolon": [false, "never"],
+    "no-var-requires": false,
+    "no-bitwise": false,
+    "arrow-parens": [true, "ban-single-arg-parens"],
+    "no-console": false
+  }
+}
