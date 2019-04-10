@@ -43,3 +43,10 @@ export class Post extends Model<Post> {
   @HasMany(() => Comment)
   comments;
 }
+
+export const memberProviders = [
+  {
+    provide: 'MEMBER_REPOSITORY',
+    useValue: Member
+  }
+];

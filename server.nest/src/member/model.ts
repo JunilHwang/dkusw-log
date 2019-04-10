@@ -29,3 +29,10 @@ export class Member extends Model<Member> {
   @Column
   githubAccessToken: string;
 }
+
+export const memberProviders = [
+  {
+    provide: 'MEMBER_REPOSITORY',
+    useValue: Member
+  }
+];

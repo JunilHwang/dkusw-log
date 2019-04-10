@@ -27,3 +27,10 @@ export class Comment extends Model<Comment> {
   @BelongsTo(() => Post)
   post;
 }
+
+export const commentProviders = [
+  {
+    provide: 'COMMENT_REPOSITORY',
+    useValue: Comment,
+  }
+];
