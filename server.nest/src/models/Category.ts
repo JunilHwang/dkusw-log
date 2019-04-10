@@ -1,7 +1,7 @@
-import { Table, Column, Model, AutoIncrement, PrimaryKey, DataType } from 'sequelize-typescript';
+import { Table, Column, Model, AutoIncrement, PrimaryKey } from 'sequelize-typescript';
 
 @Table
-class Category extends Model<Category> {
+export class Category extends Model<Category> {
   @Column
   @AutoIncrement
   @PrimaryKey
@@ -10,5 +10,3 @@ class Category extends Model<Category> {
   @Column
   title: string;
 }
-
-export default Category;

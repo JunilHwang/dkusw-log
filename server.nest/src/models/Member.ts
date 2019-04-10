@@ -1,7 +1,7 @@
 import { Table, Column, Model, AutoIncrement, PrimaryKey, DataType, Unique } from 'sequelize-typescript';
 
 @Table
-class Member extends Model<Member> {
+export class Member extends Model<Member> {
   @Column
   @AutoIncrement
   @PrimaryKey
@@ -29,5 +29,3 @@ class Member extends Model<Member> {
   @Column
   githubAccessToken: string;
 }
-
-export default Member;
