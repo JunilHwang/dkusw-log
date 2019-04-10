@@ -7,9 +7,9 @@ import { Category } from '../category/model';
 @Scopes({
   full: {
     include: [
-      { model: () => Category },
-      { model: () => Member },
-      { model: () => Comment, include: [ () => Member ] }
+      () => Category,
+      () => Member,
+      () => Comment
     ]
   }
 })
