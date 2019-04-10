@@ -10,3 +10,10 @@ export class Category extends Model<Category> {
   @Column
   title: string;
 }
+
+export const categoryProviders = [
+  {
+    provide: 'CATEGORY_REPOSITORY',
+    useValue: Category,
+  }
+]

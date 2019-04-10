@@ -1,6 +1,7 @@
-import { Table, Column, Model, AutoIncrement, PrimaryKey, DataType, BelongsTo, ForeignKey } from 'sequelize-typescript';
-import { Member } from './Member';
-import { Post } from './Post';
+
+import { Model, Table, Column, AutoIncrement, PrimaryKey, DataType, BelongsTo, ForeignKey } from 'sequelize-typescript';
+import { Member } from '../member/model';
+import { Post } from '../post/model';
 
 @Table
 export class Comment extends Model<Comment> {

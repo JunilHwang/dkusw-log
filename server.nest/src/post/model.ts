@@ -1,7 +1,8 @@
+
 import { Table, Column, Model, AutoIncrement, PrimaryKey, DataType, ForeignKey, BelongsTo, Scopes, HasMany } from 'sequelize-typescript';
-import { Member } from './Member';
-import { Comment } from './Comment';
-import { Category } from './Category';
+import { Member } from '../member/model';
+import { Comment } from '../comment/model';
+import { Category } from '../category/model';
 
 @Scopes({
   full: {
