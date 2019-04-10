@@ -5,17 +5,17 @@ import { Post } from '../post/model';
 
 @Table
 export class Comment extends Model<Comment> {
-  @Column
   @AutoIncrement
   @PrimaryKey
+  @Column
   idx: number;
 
-  @Column
   @ForeignKey(() => Member)
+  @Column
   midx: number;
 
-  @Column
   @ForeignKey(() => Post)
+  @Column
   pidx: number;
 
   @Column({ type: DataType.TEXT })

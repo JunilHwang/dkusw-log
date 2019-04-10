@@ -2,13 +2,13 @@ import { Table, Column, Model, AutoIncrement, PrimaryKey, DataType, Unique } fro
 
 @Table
 export class Member extends Model<Member> {
-  @Column
   @AutoIncrement
   @PrimaryKey
+  @Column
   idx: number;
 
-  @Column
   @Unique
+  @Column
   id: string;
 
   @Column

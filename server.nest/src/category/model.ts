@@ -1,10 +1,12 @@
-import { Table, Column, Model, AutoIncrement, PrimaryKey } from 'sequelize-typescript';
+import { Table, Column, Model, AutoIncrement, PrimaryKey, AllowNull } from 'sequelize-typescript';
 
 @Table
 export class Category extends Model<Category> {
-  @Column
+
+  @AllowNull(false)
   @AutoIncrement
   @PrimaryKey
+  @Column
   idx: number;
 
   @Column

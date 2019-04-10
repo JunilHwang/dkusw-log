@@ -15,9 +15,9 @@ import { Category } from '../category/model';
 })
 @Table
 export class Post extends Model<Post> {
-  @Column
   @AutoIncrement
   @PrimaryKey
+  @Column
   idx: number;
 
   @Column
@@ -26,12 +26,12 @@ export class Post extends Model<Post> {
   @Column({type: DataType.TEXT})
   content: string;
 
-  @Column
   @ForeignKey(() => Category)
+  @Column
   cidx: number;
 
-  @Column
   @ForeignKey(() => Member)
+  @Column
   midx: number;
 
   @BelongsTo(() => Category)
@@ -44,9 +44,9 @@ export class Post extends Model<Post> {
   comments;
 }
 
-export const memberProviders = [
+export const postProviders = [
   {
-    provide: 'MEMBER_REPOSITORY',
-    useValue: Member
+    provide: 'POST_REPOSITORY',
+    useValue: Post
   }
 ];

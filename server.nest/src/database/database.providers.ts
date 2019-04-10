@@ -14,7 +14,7 @@ export const databaseProviders = [
         dialect: 'mariadb'
       });
       sequelize.addModels([ Post, Comment, Category, Member ]);
-      await sequelize.sync();
+      await sequelize.sync({force: true});
       return sequelize;
     },
   },
