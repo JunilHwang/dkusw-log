@@ -3,7 +3,6 @@ import { Table, Column, Model, AutoIncrement, PrimaryKey, AllowNull } from 'sequ
 @Table
 export class Category extends Model<Category> {
 
-  @AllowNull(false)
   @AutoIncrement
   @PrimaryKey
   @Column
