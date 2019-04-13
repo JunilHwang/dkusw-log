@@ -38,6 +38,7 @@ a {
 
 a:hover {
   text-decoration: underline;
+  color: inherit;
 }
 
 legend {
@@ -56,6 +57,8 @@ img {
 
 h1, h2, h3, h4, h5, h6, strong {
   font-weight: 200;
+  margin: 0;
+  padding: 0;
 }
 
 input[type="text"], input[type="password"], textarea {
@@ -108,6 +111,176 @@ input[type="text"], input[type="password"], textarea {
   .only-tablet {
     display: none;
   }
+}
+
+/* login */
+.login-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.login-wrap:after {
+  content: "";
+  display: block;
+  clear: blth;
+}
+
+.login-visual {
+  float: left;
+  height: 100%;
+  width: 50%;
+  background: url(../images/dku.jpg) no-repeat center/cover;
+  position: relative;
+  text-align: center;
+}
+
+.login-visual:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.login-visual > div {
+  position: relative;
+  z-index: 10;
+  color: #fff;
+  text-align: left;
+}
+
+.login-visual > div:after {
+  content: "";
+  display: block;
+  clear: blth;
+}
+
+.login-visual h2 {
+  font-size: 35px;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin: 0;
+  font-weight: 400;
+  float: left;
+  text-align: right;
+}
+
+.login-visual h2 span {
+  font-size: 45px;
+  font-weight: 100;
+}
+
+.login-visual dl {
+  float: left;
+  border-left: 1px solid #fff;
+  padding-left: 10px;
+  margin-left: 10px;
+  padding-bottom: 50px;
+}
+
+.login-visual dt, .login-visual dd {
+  line-height: 1;
+}
+
+.login-visual dt {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.login-visual p {
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  font-size: 19px;
+}
+
+.login-visual p + p {
+  margin-top: 10px;
+}
+
+.login__form {
+  float: left;
+  height: 100%;
+  width: 50%;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.login__form section {
+  background: #fff;
+  padding: 30px;
+  text-align: left;
+}
+
+.login__form a {
+  text-decoration: none;
+}
+
+.login__form h3 {
+  margin-bottom: 20px;
+}
+
+.login__form--division {
+  position: relative;
+  text-align: center;
+}
+
+.login__form--division:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: #ddd;
+}
+
+.login__form--division span {
+  display: inline-block;
+  background: #fff;
+  z-index: 10;
+  position: relative;
+  padding: 0 10px;
+}
+
+.login__button {
+  display: block;
+  width: 400px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.login__button i {
+  font-size: 25px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.login__button--github {
+  border: 1px solid #ddd;
+  background: #e9ecef;
+}
+
+.login__button--google {
+  background: #db4853;
+  color: #fff !important;
+}
+
+.login__button--none {
+  background: #09F;
+  color: #fff !important;
+}
+
+.login__button--temp {
+  background: #1dc800;
+  color: #fff !important;
 }
 
 /* input */
