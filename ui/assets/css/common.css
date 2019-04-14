@@ -546,12 +546,7 @@ input[type="text"], input[type="password"], textarea {
   position: relative;
   padding: 30px;
   height: 470px;
-  margin-left: calc(80px / 3);
-  margin-bottom: calc(80px / 3);
-}
-
-.post-summary:nth-child(4n+1) {
-  margin-left: 0;
+  margin: 10px;
 }
 
 .post-summary__wrap:after {
@@ -670,6 +665,63 @@ input[type="text"], input[type="password"], textarea {
   letter-spacing: -0.5px;
 }
 
+.post-detail__head {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.post-detail__subject {
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.post-detail__author {
+  display: flex;
+  align-items: center;
+}
+
+.post-detail__author--image {
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.post-detail__author--image img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.post-detail__author--name {
+  line-height: 1;
+  margin-left: 10px;
+}
+
+.post-detail__author--name strong {
+  font-size: 17px;
+  display: inline-block;
+  color: #000;
+  font-weight: 300;
+}
+
+.post-detail__author--name p {
+  color: #666;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.post-detail__date {
+  display: inline-block;
+  margin-left: 5px;
+}
+
 /* input */
 ::placeholder {
   color: #aaa;
@@ -698,7 +750,6 @@ input[type="text"], input[type="password"], textarea {
   bottom: 0;
   line-height: 50px;
   left: 50px;
-  vertical-align: middle;
   display: block;
   color: #aaa;
 }
