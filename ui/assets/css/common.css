@@ -1,4 +1,4 @@
-* {
+div, ul, li, p, h1, h2, h3, h4, h5, h6, header, footer, section, nav, article, aside, main {
   margin: 0;
   padding: 0;
 }
@@ -63,8 +63,6 @@ img {
 
 h1, h2, h3, h4, h5, h6, strong {
   font-weight: 200;
-  margin: 0;
-  padding: 0;
 }
 
 input[type="text"], input[type="password"], textarea {
@@ -270,6 +268,7 @@ input[type="text"], input[type="password"], textarea {
   font-size: 25px;
   display: inline-block;
   margin-right: 10px;
+  margin-top: -3px;
 }
 
 .login__button--github {
@@ -343,19 +342,19 @@ input[type="text"], input[type="password"], textarea {
   color: #aaa;
 }
 
-.site-navigation a:before {
+.site-navigation a:after {
   content: "";
   display: block;
   position: absolute;
   left: 0;
   width: 0;
   bottom: -1px;
-  height: 2px;
+  height: 1px;
   background: #000;
   transition: .6s;
 }
 
-.site-navigation a:hover:before, .site-navigation a.active:before {
+.site-navigation a:hover:after, .site-navigation a.active:after {
   width: 100%;
 }
 
@@ -367,7 +366,7 @@ input[type="text"], input[type="password"], textarea {
   color: #09F;
 }
 
-.site-navigation a.active:before {
+.site-navigation a.active:after {
   background: #09F;
 }
 
@@ -381,6 +380,85 @@ input[type="text"], input[type="password"], textarea {
 
 .site-navigation__category {
   margin-top: 30px;
+}
+
+.site-navigation__category a:before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background: #aaa;
+  color: #fff;
+  border: none;
+  display: inline-block;
+  line-height: 6px;
+  text-align: center;
+  vertical-align: middle;
+  margin: -2px 22px 0 12px;
+}
+
+.site-content-wrap {
+  padding: 30px;
+}
+
+.profile {
+  position: relative;
+}
+
+.profile__image {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  background: #fff no-repeat center / cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-sizing: content-box;
+}
+
+.profile__info {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.profile__info:after {
+  content: "";
+  display: block;
+  clear: blth;
+}
+
+.profile__info li {
+  float: left;
+  margin-left: 15px;
+}
+
+.profile__info a {
+  display: block;
+  font-size: 19px;
+  color: #aaa;
+  transition: .3s;
+  position: relative;
+}
+
+.profile__info a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  height: 1px;
+  background: #000;
+  bottom: -3px;
+  transition: .3s;
+}
+
+.profile__info a:hover, .profile__info a.active {
+  color: #000;
+}
+
+.profile__info a:hover:after, .profile__info a.active:after {
+  left: 0;
+  right: 0;
 }
 
 /* input */
