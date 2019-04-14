@@ -129,7 +129,7 @@ input[type="text"], input[type="password"], textarea {
 .login-wrap:after {
   content: "";
   display: block;
-  clear: blth;
+  clear: both;
 }
 
 .login-visual {
@@ -162,7 +162,7 @@ input[type="text"], input[type="password"], textarea {
 .login-visual > div:after {
   content: "";
   display: block;
-  clear: blth;
+  clear: both;
 }
 
 .login-visual h2 {
@@ -282,8 +282,25 @@ input[type="text"], input[type="password"], textarea {
 }
 
 .login__button--none {
-  background: #09F;
+  background: #4894db;
   color: #fff !important;
+}
+
+.login__button--image {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.login__button--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: -2px;
+  left: 0;
 }
 
 .login__button--temp {
@@ -363,11 +380,45 @@ input[type="text"], input[type="password"], textarea {
 }
 
 .site-navigation a.active {
-  color: #09F;
+  color: #4894db;
+}
+
+.site-navigation a.active--image {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.site-navigation a.active--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: -2px;
+  left: 0;
 }
 
 .site-navigation a.active:after {
-  background: #09F;
+  background: #4894db;
+}
+
+.site-navigation a.active--image {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.site-navigation a.active--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: -2px;
+  left: 0;
 }
 
 .site-navigation i {
@@ -397,10 +448,15 @@ input[type="text"], input[type="password"], textarea {
   margin: -2px 22px 0 12px;
 }
 
+.site-content {
+  padding-top: 50px;
+}
+
 .site-content-wrap {
   padding: 30px;
 }
 
+/* profile of header */
 .profile {
   position: relative;
 }
@@ -424,7 +480,7 @@ input[type="text"], input[type="password"], textarea {
 .profile__info:after {
   content: "";
   display: block;
-  clear: blth;
+  clear: both;
 }
 
 .profile__info li {
@@ -459,6 +515,134 @@ input[type="text"], input[type="password"], textarea {
 .profile__info a:hover:after, .profile__info a.active:after {
   left: 0;
   right: 0;
+}
+
+/* post-summary */
+.post-summary {
+  float: left;
+  width: calc(25% - 20px);
+  background: #fff;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 0 5px #eee;
+  box-sizing: border-box;
+  position: relative;
+  padding: 30px;
+  height: 470px;
+}
+
+.post-summary + .post-summary {
+  margin-left: calc(80px / 3);
+}
+
+.post-summary__wrap:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.post-summary__wrap section + section {
+  margin-top: 100px;
+}
+
+.post-summary__title {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.post-summary__section {
+  margin-bottom: 100px;
+}
+
+.post-summary__thumbnail {
+  display: block;
+  height: 200px;
+  position: relative;
+  margin: -30px -30px 30px;
+}
+
+.post-summary__thumbnail:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  transition: .3s;
+  opacity: 0;
+}
+
+.post-summary__thumbnail img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-summary__thumbnail:hover:after {
+  opacity: 1;
+}
+
+.post-summary__author {
+  font-size: 19px;
+}
+
+.post-summary__author a {
+  color: #4894db;
+}
+
+.post-summary__author--image {
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: absolute;
+  margin-top: -54px;
+  margin-left: -5px;
+  z-index: 10;
+  background: #fff;
+  border-radius: 40px;
+  border: 4px solid #fff;
+  box-sizing: content-box;
+}
+
+.post-summary__author--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.post-summary__subject {
+  font-size: 21px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.post-summary__info {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.post-summary__cnt:before {
+  content: "";
+  width: 2px;
+  height: 2px;
+  border-radius: 2px;
+  background: #666;
+  color: #666;
+  border: none;
+  display: inline-block;
+  line-height: 2px;
+  text-align: center;
+  vertical-align: middle;
+  margin: -2px 7px 0 5px;
 }
 
 /* input */
@@ -688,8 +872,25 @@ span.middle + * {
   line-height: 40px;
   text-indent: 15px;
   color: #fff;
-  background: #09F;
+  background: #4894db;
   font-size: 21px !important;
+}
+
+.layer--image {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.layer--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: -2px;
+  left: 0;
 }
 
 .layer a.close {

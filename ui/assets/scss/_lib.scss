@@ -20,7 +20,7 @@
 	text-align:center;
 }
 @mixin clear () {
-	&:after{content:"";display:block;clear:blth;}
+	&:after{content:"";display:block;clear:both;}
 }
 @mixin pc {
 	@media (min-width:1200px) {

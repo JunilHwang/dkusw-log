@@ -43,7 +43,10 @@
     i{font-size:25px;display:inline-block;margin-right:10px;margin-top:-3px;}
     &--github{border:1px solid #ddd;background:#e9ecef;}
     &--google{background:$color-red;color:#fff !important;}
-    &--none{background:#09F;color:#fff !important;}
+    &--none{background:$color-blue;color:#fff !important;}
+    &--image{width:15px;height:15px;display:inline-block;vertical-align:middle;position:relative;
+      img{width:100%;height:100%;object-fit:cover;position:absolute;top:-2px;;left:0;}
+    }
     &--temp{background:$color-naver;color:#fff !important;}
   }
 }
@@ -62,8 +65,14 @@
         &:after{width:100%;}
       }
       &:hover{color:#000;}
-      &.active{color:#09F;
-        &:after{background:#09F;}
+      &.active{color:$color-blue;
+        &--image{width:15px;height:15px;display:inline-block;vertical-align:middle;position:relative;
+          img{width:100%;height:100%;object-fit:cover;position:absolute;top:-2px;;left:0;}
+        }
+        &:after{background:$color-blue;}
+        &--image{width:15px;height:15px;display:inline-block;vertical-align:middle;position:relative;
+          img{width:100%;height:100%;object-fit:cover;position:absolute;top:-2px;;left:0;}
+        }
       }
     }
     i{display:inline-block;margin-right:10px;width:30px;text-align:center;margin-top:-3px;}
@@ -73,11 +82,12 @@
       }
     }
   }
-  &-content{
+  &-content{padding-top:50px;
     &-wrap{padding:30px;}
   }
 }
 
+/* profile of header */
 .profile{position:relative;
   &__image{display:inline-block;vertical-align:middle;width:50px;height:50px;background:#fff no-repeat center / cover;border-radius:50%;border:4px solid #fff;box-sizing:content-box;}
   &__info{display:inline-block;vertical-align:middle;@include clear();
@@ -89,6 +99,32 @@
         &:after{left:0;right:0;}
       }
     }
+  }
+}
+
+/* post-summary */
+.post-summary{float:left;width:calc(25% - 20px);background:#fff;border-radius:3px;overflow:hidden;box-shadow:0 0 5px #eee;box-sizing:border-box;position:relative;padding:30px;height:470px;
+  +.post-summary{margin-left:calc(80px / 3)}
+  &__wrap{@include clear();
+    section+section{margin-top:100px;}
+  }
+  &__title{font-size:35px;margin-bottom:20px;}
+  &__section{margin-bottom:100px;}
+  &__thumbnail{display:block;height:200px;position:relative;margin:-30px -30px 30px;
+    &:after{content:"";display:block;position:absolute;left:0;right:0;top:0;bottom:0;background:fade-out(#000, .9);transition:.3s;opacity:0;}
+    img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;}
+    &:hover:after{opacity:1;}
+  }
+  &__author{font-size:19px;
+    a{color:$color-blue;}
+    &--image{width:40px;height:40px;display:block;position:absolute;margin-top:-54px;margin-left:-5px;z-index:10;background:#fff;border-radius:40px;border:4px solid #fff;box-sizing:content-box;
+      img{width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;}
+    }
+  }
+  &__subject{font-size:21px;margin:10px 0;font-weight:bold;}
+  &__info{font-size:13px;color:#777;margin-bottom:10px;}
+  &__cnt{
+    &:before{content:"";@include circle(2px,#666,#666);vertical-align:middle;margin:-2px 7px 0 5px;}
   }
 }
 
@@ -175,7 +211,10 @@ span.middle{display:inline-block;vertical-align:middle;width:0;height:100%;
 }
 .layer{position:fixed;left:0;right:0;top:0;bottom:0;background:fade-out(#000, 0.5);z-index:100;overflow:auto;text-align:center;
   &-content{background:#fff;border-radius:3px;box-shadow:0 0 10px #666;padding:30px;margin:30px;overflow:hidden;position:relative;text-align:left;}
-  &-title{position:absolute;left:0;right:0;top:0;height:40px;line-height:40px;text-indent:15px;color:#fff;background:#09F;font-size:21px !important;}
+  &-title{position:absolute;left:0;right:0;top:0;height:40px;line-height:40px;text-indent:15px;color:#fff;background:$color-blue;font-size:21px !important;}
+  &--image{width:15px;height:15px;display:inline-block;vertical-align:middle;position:relative;
+    img{width:100%;height:100%;object-fit:cover;position:absolute;top:-2px;;left:0;}
+  }
   a.close{position:absolute;right:0;top:0;width:40px;height:40px;display:block;text-align:center;line-height:40px;background:fade-out(#000,.5);color:#fff;z-index:10;text-decoration:none;transition:.3s;
     &:hover{background:fade-out(#000, .6)}
   }
