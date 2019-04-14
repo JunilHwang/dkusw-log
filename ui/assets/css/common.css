@@ -371,7 +371,7 @@ input[type="text"], input[type="password"], textarea {
   transition: .6s;
 }
 
-.site-navigation a:hover:after, .site-navigation a.active:after {
+.site-navigation a:hover:after, .site-navigation a.site-navigation__active:after {
   width: 100%;
 }
 
@@ -379,11 +379,11 @@ input[type="text"], input[type="password"], textarea {
   color: #000;
 }
 
-.site-navigation a.active {
+.site-navigation a.site-navigation__active {
   color: #4894db;
 }
 
-.site-navigation a.active--image {
+.site-navigation a.site-navigation__active--image {
   width: 15px;
   height: 15px;
   display: inline-block;
@@ -391,7 +391,7 @@ input[type="text"], input[type="password"], textarea {
   position: relative;
 }
 
-.site-navigation a.active--image img {
+.site-navigation a.site-navigation__active--image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -400,11 +400,11 @@ input[type="text"], input[type="password"], textarea {
   left: 0;
 }
 
-.site-navigation a.active:after {
+.site-navigation a.site-navigation__active:after {
   background: #4894db;
 }
 
-.site-navigation a.active--image {
+.site-navigation a.site-navigation__active--image {
   width: 15px;
   height: 15px;
   display: inline-block;
@@ -412,7 +412,7 @@ input[type="text"], input[type="password"], textarea {
   position: relative;
 }
 
-.site-navigation a.active--image img {
+.site-navigation a.site-navigation__active--image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -483,6 +483,11 @@ input[type="text"], input[type="password"], textarea {
   clear: both;
 }
 
+.profile__info i {
+  font-size: 13px;
+  margin-top: -2px;
+}
+
 .profile__info li {
   float: left;
   margin-left: 15px;
@@ -529,10 +534,12 @@ input[type="text"], input[type="password"], textarea {
   position: relative;
   padding: 30px;
   height: 470px;
+  margin-left: calc(80px / 3);
+  margin-bottom: calc(80px / 3);
 }
 
-.post-summary + .post-summary {
-  margin-left: calc(80px / 3);
+.post-summary:nth-child(4n+1) {
+  margin-left: 0;
 }
 
 .post-summary__wrap:after {
@@ -622,6 +629,7 @@ input[type="text"], input[type="password"], textarea {
   font-size: 21px;
   margin: 10px 0;
   font-weight: bold;
+  letter-spacing: -0.5px;
 }
 
 .post-summary__info {
@@ -643,6 +651,11 @@ input[type="text"], input[type="password"], textarea {
   text-align: center;
   vertical-align: middle;
   margin: -2px 7px 0 5px;
+}
+
+.post-summary__description {
+  word-break: break-all;
+  letter-spacing: -0.5px;
 }
 
 /* input */
