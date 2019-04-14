@@ -158,9 +158,22 @@
 /* comment */
 .comment{
   &__header{font-size:25px;font-weight:400;color:#000;margin-top:20px;}
-  &__form{margin-top:10px;
+  &__form{margin:10px 0;
     &--title{margin-bottom:5px;font-size:19px;}
     &--button{text-align:right;}
+  }
+  &-article{padding:20px 0;
+    &+&{border-top:1px solid #ddd;}
+    &__author{display:flex;align-items:center;
+      &--image{display:block;position:relative;width:35px;height:35px;border-radius:35px;overflow:hidden;
+        img{position:absolute;left:0;top:0;height:100%;width:100%;object-fit:cover;}
+      }
+      &--name{line-height:1;margin-left:10px;
+        strong{font-size:13px;display:inline-block;color:#000;font-weight:300;}
+      }
+      &--date{display:block;color:#666;font-size:11px;margin-top:5px;}
+    }
+    &__content{margin-top:10px;}
   }
 }
 

@@ -752,7 +752,7 @@ input[type="text"], input[type="password"], textarea {
 }
 
 .comment__form {
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 .comment__form--title {
@@ -762,6 +762,60 @@ input[type="text"], input[type="password"], textarea {
 
 .comment__form--button {
   text-align: right;
+}
+
+.comment-article {
+  padding: 20px 0;
+}
+
+.comment-article + .comment-article {
+  border-top: 1px solid #ddd;
+}
+
+.comment-article__author {
+  display: flex;
+  align-items: center;
+}
+
+.comment-article__author--image {
+  display: block;
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  overflow: hidden;
+}
+
+.comment-article__author--image img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.comment-article__author--name {
+  line-height: 1;
+  margin-left: 10px;
+}
+
+.comment-article__author--name strong {
+  font-size: 13px;
+  display: inline-block;
+  color: #000;
+  font-weight: 300;
+}
+
+.comment-article__author--date {
+  display: block;
+  color: #666;
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+.comment-article__content {
+  margin-top: 10px;
 }
 
 /* input */
