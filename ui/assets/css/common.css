@@ -117,6 +117,10 @@ input[type="text"], input[type="password"], textarea {
   }
 }
 
+#app {
+  height: 100%;
+}
+
 /* login */
 .login-wrap {
   position: absolute;
@@ -306,10 +310,6 @@ input[type="text"], input[type="password"], textarea {
 .login__button--temp {
   background: #1dc800;
   color: #fff !important;
-}
-
-.site-background {
-  background: #f5f5f5;
 }
 
 .site-wrap {
@@ -522,7 +522,13 @@ input[type="text"], input[type="password"], textarea {
   right: 0;
 }
 
-/* post-summary */
+/* post */
+.post-list__wrap {
+  padding-left: 300px;
+  min-height: 100%;
+  background: #f5f5f5;
+}
+
 .post-summary {
   float: left;
   width: calc(25% - 20px);
