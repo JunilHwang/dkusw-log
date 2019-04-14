@@ -529,6 +529,12 @@ input[type="text"], input[type="password"], textarea {
   background: #f5f5f5;
 }
 
+.post-view__wrap {
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
 .post-summary {
   float: left;
   width: calc(25% - 20px);

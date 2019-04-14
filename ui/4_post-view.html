@@ -13,7 +13,7 @@
 </head>
 <body>
   <div id="app">
-    <section class="site-content-wrap">
+    <section class="site-content-wrap post-view__wrap">
       <header class="profile">
         <div class="profile__image" style="background-image:url(./assets/images/no-profile.png)"></div>
         <ul class="profile__info">
@@ -24,26 +24,25 @@
         </ul>
       </header>
       <main class="site-content">
-        <section class="post">
-          <h1 class="post__subject"><a href="#">Lorem ipsum dolor sit.</a></h1>
-          <strong class="post__author">
-            <a href="#">
-              <span class="post__author--image">
-                <img src="assets/images/no-profile.png" alt="Lorem">
-              </span>
-              Lorem
-            </a>
-          </strong>
-          <div class="post__info">
-            <time class="post__date">15초 전</time>
-            <span class="post__cnt">0개의 댓글</span>
-          </div>
-          <div class="post__description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid culpa cumque, similique labore ad aperiam.
-          </div>
+        <article class="post">
+          <header>
+            <h1 class="post__subject"><a href="#">Lorem ipsum dolor sit.</a></h1>
+            <div class="post__info">
+              <strong class="post__author">
+                <a href="#">
+                  <span class="post__author--image">
+                    <img src="assets/images/no-profile.png" alt="Lorem">
+                  </span>
+                  Lorem
+                </a>
+              </strong>
+              <time class="post__date">15초 전</time>
+            </div>
+          </header>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid culpa cumque, similique labore ad aperiam.
         </article>
       </main>
-    </section>
+    </article>
   </div>
   <script src="//code.jquery.com/jquery-latest.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
