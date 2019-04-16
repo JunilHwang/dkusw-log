@@ -238,6 +238,7 @@ input[type="text"], input[type="password"], textarea {
 .login__form--division {
   position: relative;
   text-align: center;
+  margin-top: 10px;
 }
 
 .login__form--division:before {
@@ -309,10 +310,6 @@ input[type="text"], input[type="password"], textarea {
 .login__button--temp {
   background: #1dc800;
   color: #fff !important;
-}
-
-.site-wrap {
-  padding-left: 300px;
 }
 
 .site-aside {
@@ -532,6 +529,10 @@ input[type="text"], input[type="password"], textarea {
   width: 800px;
   margin: 0 auto;
   position: relative;
+}
+
+.post-write__wrap {
+  padding: 0;
 }
 
 .post-summary {
