@@ -75,7 +75,7 @@
         }
       }
     }
-    i{display:inline-block;margin-right:10px;width:30px;text-align:center;margin-top:-3px;}
+    svg{display:inline-block;margin-right:10px;width:30px;text-align:center;margin-top:-3px;}
     &__category{margin-top:30px;
       a{
         &:before{content:"";@include circle(6px,#aaa,#fff);vertical-align:middle;margin:-2px 22px 0 12px;}

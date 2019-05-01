@@ -7,6 +7,7 @@ import userRepo from 'repository/UserRepository'
 export interface IUserStore {
   user: User|null
   login(e: any): void
+  logout(e: any): void
 }
 
 export default class UserStore implements IUserStore {
@@ -21,5 +22,10 @@ export default class UserStore implements IUserStore {
   @action login = (e: any): void => {
     e.preventDefault()
     this.user = userRepo.signIn()
+  }
+
+  @action logout = (e: any): void => {
+    this.user = null
+    localStorage.removeItem('user')
   }
 }

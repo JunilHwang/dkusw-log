@@ -14,9 +14,7 @@ export default class App extends Component<Props> {
     const { user } = this.props.userStore!
     return (
       <Router>
-        <div>
-          <Route path="/" component={user === null ? Login : Home} />
-        </div>
+        <Route path="/" component={user === null ? Login : Home} />
       </Router>
     );
   }

@@ -6,9 +6,9 @@ const Visual = () => (
     <span className="middle"></span>
     <div>
       <h2>
-        <span>단국대학교</span>
-        <br />소프트웨어학과 커뮤니티
-            </h2>
+        <span>단국대학교</span><br />
+        소프트웨어학과 커뮤니티
+      </h2>
       <dl>
         <dt>DKU.SW.LOG</dt>
         <dd>
