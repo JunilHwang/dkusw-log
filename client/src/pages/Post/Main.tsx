@@ -20,9 +20,6 @@ export default class PostMain extends Component<Props> {
   }
   render() {
     const { recentPosts, noticePosts, hotPosts } = this.props.postStore!
-    console.log(recentPosts)
-    console.log(noticePosts)
-    console.log(hotPosts)
     const sections = ['Recently', 'Notice', 'Hot Posts']
     const postsOfSections = [recentPosts, noticePosts, hotPosts]
     return (

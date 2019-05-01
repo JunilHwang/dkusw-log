@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FaListUl, FaSchool, FaFlag, FaTags } from 'react-icons/fa';
+import { Link } from 'react-router-dom'
 
 export default class Menu extends Component {
   render() {
@@ -8,7 +9,7 @@ export default class Menu extends Component {
         <h3 className="site-logo"><a href="#">DKU.SW.LOG</a></h3>
         <nav className="site-navigation">
           <ul className="site-navigation__menu">
-            <li><a href="#"><FaListUl /> ALL</a></li>
+            <li><Link to="/all"><FaListUl /> ALL</Link></li>
             <li><a href="#"><FaSchool /> About Us</a></li>
             <li><a href="#"><FaFlag /> Notice</a></li>
             <li><a href="#"><FaTags /> Tag</a></li>

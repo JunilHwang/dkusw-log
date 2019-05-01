@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Menu from './Menu';
 import { Route } from 'react-router-dom'
-import PostList from './Post/List'
 import PostMain from './Post/Main'
+import PostList from './Post/List'
 
 export default class Home extends Component {
   render() {
@@ -10,7 +10,7 @@ export default class Home extends Component {
       <div>
         <Menu />
         <Route exact path={`/`} component={PostMain} />
-        <Route path={`/:category`} component={PostList} />
+        <Route exact path={`/:category`} component={PostList} />
       </div>
     );
   }
