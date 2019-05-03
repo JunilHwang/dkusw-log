@@ -1,23 +1,52 @@
 import React, { Component } from 'react';
 import { FaListUl, FaSchool, FaFlag, FaTags } from 'react-icons/fa';
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+import { inject, observer } from 'mobx-react';
+import { IMenuStore } from 'store/MenuStore';
 
-export default class Menu extends Component {
+type Props = {
+  menuStore?: IMenuStore
+}
+@inject('menuStore')
+@observer
+export default class Menu extends Component<Props> {
   render() {
+    const { category, selected} = this.props.menuStore!
+    const isSelect = (sel: string) => selected === sel ? 'active' : ''
     return (
       <aside className="site-aside">
-        <h3 className="site-logo"><a href="#">DKU.SW.LOG</a></h3>
+        <h3 className="site-logo"><Link to="/">DKU.SW.LOG</Link></h3>
         <nav className="site-navigation">
           <ul className="site-navigation__menu">
-            <li><Link to="/all"><FaListUl /> ALL</Link></li>
-            <li><a href="#"><FaSchool /> About Us</a></li>
-            <li><a href="#"><FaFlag /> Notice</a></li>
-            <li><a href="#"><FaTags /> Tag</a></li>
+            <li>
+              <NavLink to="/posts/all" className={isSelect('ALL')} activeClassName="active">
+                <FaListUl /> ALL
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/about-us" className={isSelect('About')} activeClassName="active">
+                <FaSchool /> About Us
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/posts/notice" className={isSelect('Notice')} activeClassName="active">
+                <FaFlag /> Notice
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/tag" className={isSelect('Tag')} activeClassName="active">
+                <FaTags /> Tag
+              </NavLink>
+            </li>
           </ul>
           <ul className="site-navigation__category">
-            <li><a href="#">Category1</a></li>
-            <li><a href="#">Category2</a></li>
-            <li><a href="#">Category3</a></li>
+            {
+              category.map((v, k) =>  (
+                <li key={k}>
+                  <NavLink to={v.url} className={isSelect(v.title)}>{v.title}</NavLink>
+                </li>
+              ))
+            }
           </ul>
         </nav>
       </aside>

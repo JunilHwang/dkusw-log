@@ -69,7 +69,7 @@ const DummyPosts: Post[] = [
 
 class PostRepository {
   findAll (category: string) {
-    const posts: Post[] = DummyPosts
+    const posts: Post[] = DummyPosts.slice().concat(DummyPosts.slice(), DummyPosts.slice())
     return posts
   }
   findRecentAll() {

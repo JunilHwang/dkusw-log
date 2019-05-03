@@ -27,12 +27,12 @@ export default class PostMain extends Component<Props> {
         <Profile />
         <main className="site-content">
           {sections.map((title: string, key: number) => (
-              <section className="post-summary__section" key={title}>
-                <h3 className="post-summary__title">{title}</h3>
-                <div className="post-summary__wrap">
-                  {postsOfSections[key].map(post => (<PostCard key={post.idx} {...post} />))}
-                </div>
-              </section>
+            <section className="post-summary__section" key={title}>
+              <h2 className="site-content__title">{title}</h2>
+              <div className="post-summary__wrap">
+                {postsOfSections[key].map(post => (<PostCard key={post.idx} {...post} />))}
+              </div>
+            </section>
           ))}
         </main>
       </section>

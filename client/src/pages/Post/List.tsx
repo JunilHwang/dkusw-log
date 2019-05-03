@@ -28,10 +28,10 @@ export default class PostList extends Component<Props> {
       <section className="site-content-wrap post-list__wrap">
         <Profile />
         <main className="site-content">
-          <section className="post-summary__section" key={title}>
-            <h3 className="post-summary__title">{title}</h3>
+          <section className="post-summary__section">
+            <h2 className="site-content__title">{title}</h2>
             <div className="post-summary__wrap">
-              {posts.map(post => (<PostCard key={post.idx} {...post} />))}
+              {posts.map((post, k) => (<PostCard key={k} {...post} />))}
             </div>
           </section>
         </main>

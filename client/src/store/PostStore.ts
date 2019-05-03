@@ -14,7 +14,7 @@ export interface IPostStore {
   getHots(): void
 }
 
-export default class PostStore {
+export default class PostStore implements IPostStore {
   @observable public posts: Post[] = []
   @observable public recentPosts: Post[] = []
   @observable public noticePosts: Post[] = []
@@ -25,6 +25,7 @@ export default class PostStore {
   }
 
   @action getPosts = (category: string): void => {
+    this.root.menuStore.setMenu(category)
     this.posts = PostRepo.findAll(category)
   }
 
