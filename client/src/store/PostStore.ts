@@ -9,12 +9,13 @@ export interface IPostStore {
   recentPosts: Post[]
   noticePosts: Post[]
   hotPosts: Post[]
+  userPosts: Post[]
   getPosts(category: string): void
   getPost(idx: number): void
   getRecently(): void
   getNotice(): void
   getHots(): void
-  getUserPosts(): void
+  getUserPosts(idx: number): void
 }
 
 export default class PostStore implements IPostStore {
@@ -23,6 +24,7 @@ export default class PostStore implements IPostStore {
   @observable public recentPosts: Post[] = []
   @observable public noticePosts: Post[] = []
   @observable public hotPosts: Post[] = []
+  @observable public userPosts: Post[] = []
   private root: IRootStore
   constructor (root: IRootStore) {
     this.root = root
@@ -49,7 +51,7 @@ export default class PostStore implements IPostStore {
     this.hotPosts = PostRepo.findHotAll()
   }
 
-  @action getUserPosts = (): void => {
-    
+  @action getUserPosts = (idx: number): void => {
+    this.userPosts = PostRepo.findUserPostAll(idx)
   }
 }

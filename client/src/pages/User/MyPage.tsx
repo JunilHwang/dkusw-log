@@ -6,16 +6,25 @@ import { Switch, Route } from 'react-router';
 import MyPagePosts from './Posts'
 import MyPageDetail from './Detail'
 import { NavLink } from 'react-router-dom';
+import { IPostStore } from 'store/PostStore';
+import { Post } from 'model/PostModel';
 
 type Props = {
   userStore?: IUserStore
+  postStore?: IPostStore
 }
 
-@inject('userStore')
+@inject('userStore', 'postStore')
 @observer
 export default class MyPage extends Component<Props> {
+  componentDidMount () {
+    const { getUserPosts } = this.props.postStore!
+    const { user } = this.props.userStore!
+    if (user) getUserPosts(user.idx)
+  }
   render () {
     const { user } = this.props.userStore!
+    const { userPosts } = this.props.postStore!
     const MyPageHeader = (user: User) => (
       <header className="mypage__header">
         <figure className="mypage__header--image">
@@ -48,7 +57,7 @@ export default class MyPage extends Component<Props> {
           <Switch>
             <Route path="/mypage/detail" component={MyPageDetail} />
             <Route exact path="/mypage">
-              <MyPagePosts />
+              {userPosts.map((v: Post) => <MyPagePosts key={v.idx} {...v} />)}
             </Route>
           </Switch>
         </section>

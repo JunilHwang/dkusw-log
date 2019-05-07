@@ -91,6 +91,10 @@ class PostRepository {
     const posts: Post[] = DummyPosts
     return posts
   }
+  findUserPostAll (idx: number) {
+    const posts: Post[] = DummyPosts
+    return posts
+  }
 }
 
 export default new PostRepository()
