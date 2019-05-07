@@ -4,17 +4,21 @@ import { IRootStore } from 'store'
 import PostRepo from 'repository/PostRepository'
 
 export interface IPostStore {
+  post: Post|null
   posts: Post[]
   recentPosts: Post[]
   noticePosts: Post[]
   hotPosts: Post[]
   getPosts(category: string): void
+  getPost(idx: number): void
   getRecently(): void
   getNotice(): void
   getHots(): void
+  getUserPosts(): void
 }
 
 export default class PostStore implements IPostStore {
+  @observable public post: Post|null = null
   @observable public posts: Post[] = []
   @observable public recentPosts: Post[] = []
   @observable public noticePosts: Post[] = []
@@ -29,6 +33,10 @@ export default class PostStore implements IPostStore {
     this.posts = PostRepo.findAll(category)
   }
 
+  @action getPost = (idx: number):void => {
+    this.post = PostRepo.find(idx)
+  }
+
   @action getRecently = (): void => {
     this.recentPosts = PostRepo.findRecentAll()
   }
@@ -39,5 +47,9 @@ export default class PostStore implements IPostStore {
 
   @action getHots = (): void => {
     this.hotPosts = PostRepo.findHotAll()
+  }
+
+  @action getUserPosts = (): void => {
+    
   }
 }

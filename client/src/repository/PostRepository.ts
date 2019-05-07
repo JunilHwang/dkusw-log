@@ -12,16 +12,19 @@ const tester: User = {
 
 const DummyComments: Comment[] = [
   {
+    idx: 1,
     writer: tester,
     content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, sed.',
     reg_date: (+new Date()) + 100000
   },
   {
+    idx: 2,
     writer: tester,
     content: 'Molestias autem eveniet mollitia, deserunt at ullam quis fugit eos.',
     reg_date: (+new Date()) + 200000
   },
   {
+    idx: 3,
     writer: tester,
     content: 'Asperiores deleniti architecto voluptatem nisi molestias. Aperiam commodi quis eius?',
     reg_date: (+new Date()) + 300000
@@ -71,6 +74,10 @@ class PostRepository {
   findAll (category: string) {
     const posts: Post[] = DummyPosts.slice().concat(DummyPosts.slice(), DummyPosts.slice())
     return posts
+  }
+  find (idx: number) {
+    const post: Post|null = DummyPosts.find((v: Post) => v.idx === idx) || null
+    return post
   }
   findRecentAll() {
     const posts: Post[] = DummyPosts

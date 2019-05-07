@@ -148,7 +148,7 @@
     &__date{display:inline-block;margin-left:5px;}
     &__content{min-height:400px;}
     &__tag{padding:30px 0;border-bottom:1px dotted #eee;
-      a{display:inline-block;border-radius:3px;letter-spacing:-0.5px;padding:5px 10px;background:#f5f5f5;border:1px solid #ddd;
+      a{display:inline-block;border-radius:3px;letter-spacing:-0.5px;padding:5px 10px;background:#f5f5f5;border:1px solid #ddd;margin-right:5px;
         &:before{content:"#"}
       }
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { IUserStore } from 'store/UserStore'
 import { observer, inject } from 'mobx-react'
+import { Link } from 'react-router-dom';
 
 type Props = {
   userStore?: IUserStore
@@ -15,9 +16,8 @@ export default class Profile extends Component<Props> {
       <header className="profile">
         <div className="profile__image" style={{ backgroundImage: `url(${require('assets/images/no-profile.png')})` }}></div>
         <ul className="profile__info">
-          <li><a href="#">내 활동</a></li>
-          <li><a href="#">마이페이지</a></li>
-          <li><a href="#" onClick={logout}>로그아웃</a></li>
+          <li><Link to="/mypage">마이페이지</Link></li>
+          <li><Link to="/" onClick={logout}>로그아웃</Link></li>
         </ul>
       </header>
     )

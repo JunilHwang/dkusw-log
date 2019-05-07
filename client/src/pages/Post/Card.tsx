@@ -1,16 +1,17 @@
 import React from 'react'
 import { Post } from 'model/PostModel'
 import { getDateFormat } from 'utils'
+import { Link } from 'react-router-dom';
 
 const PostCard = (props: Post) => {
-  const {subject, thumbnail, writer, content, comments, reg_date} = props
+  const {idx, subject, thumbnail, writer, content, comments, reg_date} = props
   return (
     <article className="post-summary">
-      <a href="#" className="post-summary__thumbnail">
+      <Link to={`/post/${idx}`} className="post-summary__thumbnail">
         <figure>
           <img src={thumbnail} alt={subject} />
         </figure>
-      </a>
+      </Link>
       <strong className="post-summary__author">
         <a href="#">
           <span className="post-summary__author--image">

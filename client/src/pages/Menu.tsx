@@ -19,22 +19,22 @@ export default class Menu extends Component<Props> {
         <nav className="site-navigation">
           <ul className="site-navigation__menu">
             <li>
-              <NavLink to="/posts/all" className={isSelect('ALL')} activeClassName="active">
+              <NavLink to="/posts/all" activeClassName="active">
                 <FaListUl /> ALL
               </NavLink>
             </li>
             <li>
-              <NavLink to="/about-us" className={isSelect('About')} activeClassName="active">
+              <NavLink to="/about-us" activeClassName="active">
                 <FaSchool /> About Us
               </NavLink>
             </li>
             <li>
-              <NavLink to="/posts/notice" className={isSelect('Notice')} activeClassName="active">
+              <NavLink to="/posts/notice" activeClassName="active">
                 <FaFlag /> Notice
               </NavLink>
             </li>
             <li>
-              <NavLink to="/tag" className={isSelect('Tag')} activeClassName="active">
+              <NavLink to="/tag" activeClassName="active">
                 <FaTags /> Tag
               </NavLink>
             </li>
